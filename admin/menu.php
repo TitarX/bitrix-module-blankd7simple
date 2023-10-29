@@ -4,7 +4,7 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-//$arAdminMenu = array(
+// $arAdminMenu = array(
 //    'parent_menu' => 'global_menu_store',
 //    'sort' => 1000,
 //    'text' => Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MENU_TEXT'),
@@ -21,10 +21,10 @@ Loc::loadMessages(__FILE__);
 //            'icon' => ''
 //        )
 //    )
-//);
+// );
 //
-//if (!empty($arAdminMenu)) {
+// if (!empty($arAdminMenu)) {
 //    return $arAdminMenu;
-//} else {
+// } else {
 //    return false;
-//}
+// }

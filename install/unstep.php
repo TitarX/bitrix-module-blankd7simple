@@ -13,7 +13,14 @@ global $APPLICATION;
 if (empty($errors)) {
     CAdminMessage::ShowNote(Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_UNINSTALLED_SUCCESS'));
 } else {
-    CAdminMessage::ShowMessage(array('TYPE' => 'ERROR', 'MESSAGE' => Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_UNINSTALLED_FAIL'), 'DETAILS' => $errors, 'HTML' => true));
+    CAdminMessage::ShowMessage(
+        array(
+            'TYPE' => 'ERROR',
+            'MESSAGE' => Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_UNINSTALLED_FAIL'),
+            'DETAILS' => $errors,
+            'HTML' => true
+        )
+    );
 }
 ?>
 

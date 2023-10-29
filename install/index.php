@@ -84,7 +84,10 @@ class perfcode_blankd7simple extends CModule
 
         ModuleManager::unRegisterModule($this->MODULE_ID);
 
-        $APPLICATION->IncludeAdminFile(Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_UNINSTALL'), __DIR__ . '/unstep.php');
+        $APPLICATION->IncludeAdminFile(
+            Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_UNINSTALL'),
+            __DIR__ . '/unstep.php'
+        );
     }
 
     //Определяем место размещения модуля
@@ -110,7 +113,9 @@ class perfcode_blankd7simple extends CModule
         global $errors;
 
         $documentRoot = Application::getDocumentRoot();
-        $errors = $DB->RunSQLBatch("{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower($DB->type) . '/install.sql');
+        $errors = $DB->RunSQLBatch(
+            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower($DB->type) . '/install.sql'
+        );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
             return false;
@@ -126,7 +131,11 @@ class perfcode_blankd7simple extends CModule
         global $errors;
 
         $documentRoot = Application::getDocumentRoot();
-        $errors = $DB->RunSQLBatch("{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower($DB->type) . '/uninstall.sql');
+        $errors = $DB->RunSQLBatch(
+            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower(
+                $DB->type
+            ) . '/uninstall.sql'
+        );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
             return false;
@@ -137,20 +146,26 @@ class perfcode_blankd7simple extends CModule
 
     private function copyFiles($documentRoot)
     {
-//        CopyDirFiles(__DIR__ . '/pages/admin/perfcode_blankd7simple_sample.php', "{$documentRoot}/bitrix/admin/perfcode_blankd7simple_sample.php", true, true, false);
-//
-//        CopyDirFiles(__DIR__ . '/js', "{$documentRoot}/bitrix/js/{$this->MODULE_ID}", true, true, false);
-//        CopyDirFiles(__DIR__ . '/css', "{$documentRoot}/bitrix/css/{$this->MODULE_ID}", true, true, false);
-//        CopyDirFiles(__DIR__ . '/images', "{$documentRoot}/bitrix/images/{$this->MODULE_ID}", true, true, false);
+        // CopyDirFiles(
+        //     __DIR__ . '/pages/admin/perfcode_blankd7simple_sample.php',
+        //     "{$documentRoot}/bitrix/admin/perfcode_blankd7simple_sample.php",
+        //     true,
+        //     true,
+        //     false
+        // );
+        //
+        // CopyDirFiles(__DIR__ . '/js', "{$documentRoot}/bitrix/js/{$this->MODULE_ID}", true, true, false);
+        // CopyDirFiles(__DIR__ . '/css', "{$documentRoot}/bitrix/css/{$this->MODULE_ID}", true, true, false);
+        // CopyDirFiles(__DIR__ . '/images', "{$documentRoot}/bitrix/images/{$this->MODULE_ID}", true, true, false);
     }
 
     private function deleteFiles()
     {
-//        DeleteDirFilesEx('/bitrix/admin/perfcode_blankd7simple.php');
-//
-//        DeleteDirFilesEx("/bitrix/js/{$this->MODULE_ID}");
-//        DeleteDirFilesEx("/bitrix/css/{$this->MODULE_ID}");
-//        DeleteDirFilesEx("/bitrix/images/{$this->MODULE_ID}");
+        // DeleteDirFilesEx('/bitrix/admin/perfcode_blankd7simple.php');
+        //
+        // DeleteDirFilesEx("/bitrix/js/{$this->MODULE_ID}");
+        // DeleteDirFilesEx("/bitrix/css/{$this->MODULE_ID}");
+        // DeleteDirFilesEx("/bitrix/images/{$this->MODULE_ID}");
     }
 
     private function createDirectories($documentRoot)

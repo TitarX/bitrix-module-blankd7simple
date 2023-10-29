@@ -2,7 +2,8 @@
 
 namespace Perfcode\Blankd7simple\Entities;
 
-use \Bitrix\Main\Entity;
+use Bitrix\Main\Entity;
+use Bitrix\Main\SystemException;
 
 class ParamsTable extends Entity\DataManager
 {
@@ -26,7 +27,7 @@ class ParamsTable extends Entity\DataManager
      * @static
      *
      * @return array Массив объектов, описывающих поля таблицы в базе данных
-     * @throws \Bitrix\Main\SystemException
+     * @throws SystemException
      */
     public static function getMap()
     {

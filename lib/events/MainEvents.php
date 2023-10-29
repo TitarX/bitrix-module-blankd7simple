@@ -2,7 +2,7 @@
 
 namespace Perfcode\Blankd7simple\Events;
 
-use \Bitrix\Main\Loader;
+use Bitrix\Main\Loader;
 
 Loader::includeModule('perfcode.blankd7simple');
 

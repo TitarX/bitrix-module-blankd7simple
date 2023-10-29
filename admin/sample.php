@@ -16,7 +16,7 @@ Loader::includeModule('perfcode.blankd7simple');
 global $APPLICATION;
 $APPLICATION->SetTitle(Loc::getMessage('PERFCODE_BLANKD7SIMPLE_PAGE_TITLE'));
 
-//Asset::getInstance()->addJs(MiscHelper::getAssetsPath('js') . '/perfcode_blankd7simple-main.js');
+// Asset::getInstance()->addJs(MiscHelper::getAssetsPath('js') . '/perfcode_blankd7simple-main.js');
 
 $request = Application::getInstance()->getContext()->getRequest();
 
