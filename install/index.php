@@ -22,7 +22,7 @@ class perfcode_blankd7simple extends CModule
         $this->PARTNER_NAME = '';
         $this->PARTNER_URI = '';
 
-        $arModuleVersion = array();
+        $arModuleVersion = [];
         include(__DIR__ . '/version.php');
         if (is_array($arModuleVersion)) {
             if (array_key_exists('VERSION', $arModuleVersion)) {
@@ -34,10 +34,10 @@ class perfcode_blankd7simple extends CModule
             }
         }
 
-        $this->exclusionAdminFiles = array(
+        $this->exclusionAdminFiles = [
             '..',
             '.'
-        );
+        ];
     }
 
     function DoInstall()
@@ -66,7 +66,10 @@ class perfcode_blankd7simple extends CModule
             ModuleManager::registerModule($this->MODULE_ID);
         }
 
-        $APPLICATION->IncludeAdminFile(Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_INSTALL'), __DIR__ . '/step.php');
+        $APPLICATION->IncludeAdminFile(
+            Loc::getMessage('PERFCODE_BLANKD7SIMPLE_MODULE_INSTALL'),
+            __DIR__ . '/step.php'
+        );
     }
 
     function DoUninstall()
@@ -114,7 +117,9 @@ class perfcode_blankd7simple extends CModule
 
         $documentRoot = Application::getDocumentRoot();
         $errors = $DB->RunSQLBatch(
-            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower($DB->type) . '/install.sql'
+            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/"
+            . strtolower($DB->type)
+            . '/install.sql'
         );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
@@ -132,9 +137,9 @@ class perfcode_blankd7simple extends CModule
 
         $documentRoot = Application::getDocumentRoot();
         $errors = $DB->RunSQLBatch(
-            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/" . strtolower(
-                $DB->type
-            ) . '/uninstall.sql'
+            "{$documentRoot}/bitrix/modules/perfcode.blankd7simple/install/db/"
+            . strtolower($DB->type)
+            . '/uninstall.sql'
         );
         if (!empty($errors)) {
             $APPLICATION->ThrowException(implode('. ', $errors));
@@ -214,11 +219,11 @@ class perfcode_blankd7simple extends CModule
 
     function GetModuleRightList()
     {
-        return array(
-            "reference_id" => array('D'),
-            "reference" => array(
+        return [
+            "reference_id" => ['D'],
+            "reference" => [
                 '[D] ' . Loc::getMessage('PERFCODE_BLANKD7SIMPLE_RIGHT_DENIED')
-            )
-        );
+            ]
+        ];
     }
 }

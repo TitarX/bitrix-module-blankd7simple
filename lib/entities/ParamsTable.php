@@ -31,20 +31,20 @@ class ParamsTable extends Entity\DataManager
      */
     public static function getMap()
     {
-        return array(
+        return [
             new Entity\IntegerField(
                 'ID',
-                array(
+                [
                     'primary' => true,
                     'autocomplete' => true,
-                )
+                ]
             ),
             new Entity\TextField(
                 'VALUE',
-                array(
+                [
                     'default_value' => '',
-                )
+                ]
             )
-        );
+        ];
     }
 }
